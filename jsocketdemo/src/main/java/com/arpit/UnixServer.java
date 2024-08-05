@@ -55,7 +55,9 @@ public class UnixServer {
 			long startTime = LocalTime.now().getNano();
 			byte[] bytes = new byte[bytesRead];
     		inBuffer.get(bytes);
+			//for decoupling channel pipes can be used
     		messageBuilder.append(new String(bytes, StandardCharsets.UTF_8));
+			
 
 			// Process complete messages
 			int delimiterIndex;
